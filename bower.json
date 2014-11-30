@@ -1,0 +1,36 @@
+{
+  "name": "SportsStore",
+  "version": "1",
+  "authors": [
+    "Felix.G <felixgrayson@hotmail.com>"
+  ],
+  "description": "This is a Web Store which is built on AngularJS",
+  "main": "index.html",
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "JavaScript",
+    "Node.js",
+    "AngularJS",
+    "WebApp"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.3.4",
+    "bootstrap": "~3.3.1",
+    "angular-route": "~1.3.4",
+    "angular-resource": "~1.3.4",
+    "angular-utils": "*",
+    "less": "~2.1.1"
+  }
+}
