@@ -2,7 +2,7 @@
 1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'install',
-1 verbose cli   'server-static',
+1 verbose cli   'grount',
 1 verbose cli   '--save' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.32
@@ -10,8 +10,8 @@
 5 warn package.json SportsStore@1.0.0 No repository field.
 6 warn package.json SportsStore@1.0.0 No README data
 7 verbose readDependencies using package.json deps
-8 verbose cache add [ 'server-static', null ]
-9 verbose cache add name=undefined spec="server-static" args=["server-static",null]
+8 verbose cache add [ 'grount', null ]
+9 verbose cache add name=undefined spec="grount" args=["grount",null]
 10 verbose parsed url { protocol: null,
 10 verbose parsed url   slashes: null,
 10 verbose parsed url   auth: null,
@@ -21,69 +21,67 @@
 10 verbose parsed url   hash: null,
 10 verbose parsed url   search: null,
 10 verbose parsed url   query: null,
-10 verbose parsed url   pathname: 'server-static',
-10 verbose parsed url   path: 'server-static',
-10 verbose parsed url   href: 'server-static' }
-11 silly lockFile ee78d15c-server-static server-static
-12 verbose lock server-static C:\Users\FelixGrayson\AppData\Roaming\npm-cache\ee78d15c-server-static.lock
-13 silly lockFile ee78d15c-server-static server-static
-14 silly lockFile ee78d15c-server-static server-static
-15 verbose addNamed [ 'server-static', '' ]
+10 verbose parsed url   pathname: 'grount',
+10 verbose parsed url   path: 'grount',
+10 verbose parsed url   href: 'grount' }
+11 silly lockFile 36ef81cb-grount grount
+12 verbose lock grount C:\Users\FelixGrayson\AppData\Roaming\npm-cache\36ef81cb-grount.lock
+13 silly lockFile 36ef81cb-grount grount
+14 silly lockFile 36ef81cb-grount grount
+15 verbose addNamed [ 'grount', '' ]
 16 verbose addNamed [ null, '*' ]
-17 silly lockFile 5d3fafed-server-static server-static@
-18 verbose lock server-static@ C:\Users\FelixGrayson\AppData\Roaming\npm-cache\5d3fafed-server-static.lock
-19 silly addNameRange { name: 'server-static', range: '*', hasData: false }
-20 verbose request where is /server-static
+17 silly lockFile 52a2c330-grount grount@
+18 verbose lock grount@ C:\Users\FelixGrayson\AppData\Roaming\npm-cache\52a2c330-grount.lock
+19 silly addNameRange { name: 'grount', range: '*', hasData: false }
+20 verbose request where is /grount
 21 verbose request registry https://registry.npmjs.org/
-22 verbose request id cb623caa507e0ca4
-23 verbose url raw /server-static
-24 verbose url resolving [ 'https://registry.npmjs.org/', './server-static' ]
-25 verbose url resolved https://registry.npmjs.org/server-static
-26 verbose request where is https://registry.npmjs.org/server-static
-27 info trying registry request attempt 1 at 16:02:31
-28 http GET https://registry.npmjs.org/server-static
-29 http 404 https://registry.npmjs.org/server-static
-30 verbose headers { date: 'Sun, 30 Nov 2014 03:02:32 GMT',
-30 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+22 verbose request id 8f21fc6b8655bc19
+23 verbose url raw /grount
+24 verbose url resolving [ 'https://registry.npmjs.org/', './grount' ]
+25 verbose url resolved https://registry.npmjs.org/grount
+26 verbose request where is https://registry.npmjs.org/grount
+27 info trying registry request attempt 1 at 23:03:36
+28 http GET https://registry.npmjs.org/grount
+29 http 404 https://registry.npmjs.org/grount
+30 verbose headers { date: 'Mon, 01 Dec 2014 10:03:36 GMT',
+30 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
 30 verbose headers   'content-type': 'application/json',
 30 verbose headers   'cache-control': 'max-age=0',
 30 verbose headers   'content-length': '52',
 30 verbose headers   'accept-ranges': 'bytes',
 30 verbose headers   via: '1.1 varnish',
-30 verbose headers   age: '0',
-30 verbose headers   'x-served-by': 'cache-ak102-NZ',
+30 verbose headers   'x-served-by': 'cache-ak47-NZ',
 30 verbose headers   'x-cache': 'MISS',
 30 verbose headers   'x-cache-hits': '0',
-30 verbose headers   'x-timer': 'S1417316551.968601,VS0,VE988',
+30 verbose headers   'x-timer': 'S1417428215.751259,VS0,VE795',
 30 verbose headers   'keep-alive': 'timeout=10, max=50',
 30 verbose headers   connection: 'Keep-Alive' }
 31 silly registry.get cb [ 404,
-31 silly registry.get   { date: 'Sun, 30 Nov 2014 03:02:32 GMT',
-31 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+31 silly registry.get   { date: 'Mon, 01 Dec 2014 10:03:36 GMT',
+31 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
 31 silly registry.get     'content-type': 'application/json',
 31 silly registry.get     'cache-control': 'max-age=0',
 31 silly registry.get     'content-length': '52',
 31 silly registry.get     'accept-ranges': 'bytes',
 31 silly registry.get     via: '1.1 varnish',
-31 silly registry.get     age: '0',
-31 silly registry.get     'x-served-by': 'cache-ak102-NZ',
+31 silly registry.get     'x-served-by': 'cache-ak47-NZ',
 31 silly registry.get     'x-cache': 'MISS',
 31 silly registry.get     'x-cache-hits': '0',
-31 silly registry.get     'x-timer': 'S1417316551.968601,VS0,VE988',
+31 silly registry.get     'x-timer': 'S1417428215.751259,VS0,VE795',
 31 silly registry.get     'keep-alive': 'timeout=10, max=50',
 31 silly registry.get     connection: 'Keep-Alive' } ]
-32 silly lockFile 5d3fafed-server-static server-static@
-33 silly lockFile 5d3fafed-server-static server-static@
-34 error 404 404 Not Found: server-static
+32 silly lockFile 52a2c330-grount grount@
+33 silly lockFile 52a2c330-grount grount@
+34 error 404 404 Not Found: grount
 34 error 404
-34 error 404 'server-static' is not in the npm registry.
+34 error 404 'grount' is not in the npm registry.
 34 error 404 You should bug the author to publish it
 34 error 404 It was specified as a dependency of 'SportsStore'
 34 error 404
 34 error 404 Note that you can also install from a
 34 error 404 tarball, folder, or http url, or git url.
 35 error System Windows_NT 6.2.9200
-36 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "server-static" "--save"
+36 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "grount" "--save"
 37 error cwd E:\OneDrive\GitHub\sportsstore
 38 error node -v v0.10.32
 39 error npm -v 1.4.28

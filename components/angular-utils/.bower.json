@@ -32,6 +32,5 @@
   },
   "_source": "git://github.com/faizanahemad/angular-utils.git",
   "_target": "*",
-  "_originalSource": "angular-utils",
-  "_direct": true
+  "_originalSource": "angular-utils"
 }

@@ -4,22 +4,101 @@
     <meta charset="UTF-8">
     <title>Sports Shopping Mall</title>
     <!--Bootstrap stylesheet-->
-    <link rel="stylesheet/less" type="text/css" href="../components/bootstrap/less/bootstrap.less"/>
+    <link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.min.css"/>
     <!--Flat UI-->
-    <link rel="stylesheet/less" type="text/css" href="../components/Flat-UI-Pro-1.3.2/less/flat-ui-pro.less"/>
+    <link rel="stylesheet" type="text/css" href="/components/Flat-UI-Pro-1.3.2/dist/css/flat-ui-pro.css"/>
 </head>
-<body>
-<h1>Hello World!</h1>
+<body ng-controller="sportStoreCtrl">
+<!--Header Menus-->
+<header>
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="#">SPORTS Brand</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#fakelink">Home</a></li>
+                    <li><a href="#fakelink">Products</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Brand <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#fakelink">Contact Us</a></li>
+
+                </ul>
+                <form class="navbar-form navbar-right" action="#" role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" id="search-query-3" type="text" placeholder="Search">
+                  <span class="input-group-btn">
+                    <button class="btn" type="submit"><span class="fui-search"></span></button>
+                  </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <!-- /navbar -->
+    </div>
+</header>
+
+<div class="container">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <!--Side Bar Menus-->
+        <ul class="nav nav-list">
+            <li class="nav-header">CATEGORY</li>
+            <li ng-click="selectCategory()">
+                <a href="#">
+                    ALL
+                    <span class="badge pull-right">{{ itemNum(items.products) }}</span>
+                </a>
+            </li>
+            <li class="active" ng-repeat="item in items.products | orderBy:category | unique:'category' "
+                    ng-click="selectCategory(item.category)">
+                <a href="#">
+                    {{ item.category }}
+                    <span class="badge pull-right">{{ itemNum(items.products) | filter:categoryFilterFn }}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-8 col-md-8 col-lg-8">
+        <div class="well" ng-repeat="item in items.products | filter:categoryFilterFn">
+            <h3>
+                <strong>{{ item.name }}</strong>
+                <span class="pull-right label label-primary">
+                    {{ item.price | currency }}
+                </span>
+            </h3>
+            <span class="lead">{{ item.description }}</span>
+        </div>
+    </div>
+</div>
+
+<!--set up jQuery-->
+<script src="/components/jquery/dist/jquery.js"></script>
 
 <!--set up angularJS-->
-<script src="../components/angular/angular.js"></script>
-<script src="../app.js"></script>
-<!--set up jQuery-->
-<script src="../components/jquery/dist/jquery.js"></script>
-<!--set up LESS-->
-<script src="../components/less/dist/less.min.js"></script>
-<!--set up Flat UI-->
-<script src="../components/Flat-UI-Pro-1.3.2/dist/js/flat-ui-pro.js"></script>
+<script src="/components/angular/angular.js"></script>
+<script src="/components/angular-ui-utils/ui-utils.js"></script>
+<script src="/controllers/sportsStore.js"></script>
 
+<!--set up Flat UI-->
+<script src="/components/Flat-UI-Pro-1.3.2/dist/js/flat-ui-pro.js"></script>
+<script src="/components/Flat-UI-Pro-1.3.2/dist/js/vendor/video.js"></script>
+<script src="/components/Flat-UI-Pro-1.3.2/js/fileinput.js"></script>
+<script src="/components/Flat-UI-Pro-1.3.2/js/radiocheck.js"></script>
+<script src="/components/Flat-UI-Pro-1.3.2/js/prettify.js"></script>
+<script src="/components/Flat-UI-Pro-1.3.2/js/application-docs.js"></script>
 </body>
 </html>
