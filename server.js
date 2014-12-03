@@ -27,6 +27,7 @@ app.use('/public', express.static(path.join(__dirname + "/public")));
 app.use('/components', express.static(path.join(__dirname + "/components")));
 app.use('/controllers', express.static(path.join(__dirname + "/controllers")));
 app.use('/filters', express.static(path.join(__dirname + "/filters")));
+app.use('/ngmodules', express.static(path.join(__dirname + "/ngmodules")));
 app.use('/', routes);
 
 app.use(function(req,res,next){

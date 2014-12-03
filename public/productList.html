@@ -21,14 +21,17 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-8 col-md-8 col-lg-8">
-                <div class="well" ng-repeat="item in items.products | filter:categoryFilterFn | range: selectedPage:pageSize">
+            <!--Products List-->
+            <div class="col-xs-8 col-md-8 col-lg-9">
+                <div class="well"
+                     ng-repeat="item in items.products | filter:categoryFilterFn | range: selectedPage:pageSize">
                     <h3>
                         <strong>{{ item.name }}</strong>
-                <span class="pull-right label label-primary">
-                    {{ item.price | currency }}
-                </span>
+                        <span class="pull-right label label-info">
+                            {{ item.price | currency }}
+                        </span>
                     </h3>
+                    <button ng-click="addProductToCart(item)" class="btn btn-success pull-right">Add to cart</button>
                     <span class="lead">{{ item.description }}</span>
                 </div>
             </div>
@@ -41,7 +44,8 @@
                     <ul>
                         <li class="previous"><a class="fui-arrow-left" href="#fakelink"></a></li>
                         <li ng-repeat="page in items.products | filter: categoryFilterFn | pageCount:pageSize"
-                            ng-click="selectPage($index + 1)"><a href="#fakelink" ng-class="getPageClass($index + 1)">{{ $index + 1 }}</a>
+                            ng-click="selectPage($index + 1)">
+                            <a href="#fakelink" ng-class="getPageClass($index + 1)">{{ $index + 1 }}</a>
                         </li>
                         <li class="next"><a class="fui-arrow-right" href="#fakelink"></a></li>
                     </ul>

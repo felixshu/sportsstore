@@ -5,7 +5,8 @@
 angular.module("sportApp")
     .constant("itemsPerPage", 4)
     .constant("ActiveClass", "active")
-    .controller('productListCtrl', ['$scope','$filter', 'itemsPerPage', 'ActiveClass', function ($scope, $filter,itemsPerPage, ActiveClass) {
+    .controller('productListCtrl', ['$scope','$filter', 'itemsPerPage', 'ActiveClass','cart', function ($scope, $filter,itemsPerPage, ActiveClass, cart) {
+
         var selectedCategory = null;
         $scope.selectCategory = function (newCategory) {
             selectedCategory = newCategory;
@@ -36,5 +37,9 @@ angular.module("sportApp")
 
         $scope.getCategoryClass = function (category) {
             return selectedCategory == category;
+        };
+
+        $scope.addProductToCart = function(product){
+            cart.addProduc(product.objectId,product.name,product.price);
         };
     }]);

@@ -1,7 +1,20 @@
 /**
  * Created by FelixGrayson on 2014/12/1.
  */
-var sportApp = angular.module('sportApp', ['ui.utils', 'CustomerFilter']);
+var sportApp = angular.module('sportApp', ['ui.utils', 'CustomerFilter',"cart", "ngRoute"])
+.config(function($routeProvider){
+        $routeProvider.when("/checkout", {
+            templateUrl:"/public/checkoutSummary.html"
+        });
+
+        $routeProvider.when("/products",{
+            templateUrl:"/public/productList.html"
+        });
+
+        $routeProvider.otherwise({
+            templateUrl:"/public/productList.html"
+        });
+    });
 
 sportApp.constant("dataUrl", "https://api.parse.com/1/classes/Products")
     .run(function($http){
