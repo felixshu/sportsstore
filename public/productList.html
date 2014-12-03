@@ -1,0 +1,52 @@
+<div class="container panel panel-success" ng-controller="productListCtrl" ng-hide="items.error">
+    <div class="row">
+        <div class="panel-body">
+            <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+                <!--Side Bar Menus-->
+                <ul class="nav nav-list nav-list-vivid">
+                    <li class="nav-header">CATEGORY</li>
+                    <li ng-click="selectCategory()">
+                        <a href="#">
+                            ALL
+                            <span class="badge pull-right">{{ items.products.length }}</span>
+                        </a>
+                    </li>
+                    <li ng-repeat="item in items.products | orderBy:category | unique:'category' "
+                        ng-click="selectCategory(item.category)"
+                        ng-class="{active:getCategoryClass(item.category)}">
+                        <a href="#">
+                            {{ item.category }}
+                            <span class="badge pull-right">{{ itemNum(item.category) }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <div class="well" ng-repeat="item in items.products | filter:categoryFilterFn | range: selectedPage:pageSize">
+                    <h3>
+                        <strong>{{ item.name }}</strong>
+                <span class="pull-right label label-primary">
+                    {{ item.price | currency }}
+                </span>
+                    </h3>
+                    <span class="lead">{{ item.description }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!--Pagination set up-->
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-3 col-md-8 col-md-offset-3 col-sm-8">
+                <div class="pagination pull-right">
+                    <ul>
+                        <li class="previous"><a class="fui-arrow-left" href="#fakelink"></a></li>
+                        <li ng-repeat="page in items.products | filter: categoryFilterFn | pageCount:pageSize"
+                            ng-click="selectPage($index + 1)"><a href="#fakelink" ng-class="getPageClass($index + 1)">{{ $index + 1 }}</a>
+                        </li>
+                        <li class="next"><a class="fui-arrow-right" href="#fakelink"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

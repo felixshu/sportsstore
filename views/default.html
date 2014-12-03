@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.min.css"/>
     <!--Flat UI-->
     <link rel="stylesheet" type="text/css" href="/components/Flat-UI-Pro-1.3.2/dist/css/flat-ui-pro.css"/>
+    <!--Main CSS-->
+    <link rel="stylesheet" type="text/css" href="/components/CSS/Main.css"/>
 </head>
 <body ng-controller="sportStoreCtrl">
 <!--Header Menus-->
@@ -52,38 +54,15 @@
     </div>
 </header>
 
-<div class="container">
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <!--Side Bar Menus-->
-        <ul class="nav nav-list">
-            <li class="nav-header">CATEGORY</li>
-            <li ng-click="selectCategory()">
-                <a href="#">
-                    ALL
-                    <span class="badge pull-right">{{ itemNum(items.products) }}</span>
-                </a>
-            </li>
-            <li class="active" ng-repeat="item in items.products | orderBy:category | unique:'category' "
-                    ng-click="selectCategory(item.category)">
-                <a href="#">
-                    {{ item.category }}
-                    <span class="badge pull-right">{{ itemNum(items.products) | filter:categoryFilterFn }}</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="col-xs-8 col-md-8 col-lg-8">
-        <div class="well" ng-repeat="item in items.products | filter:categoryFilterFn">
-            <h3>
-                <strong>{{ item.name }}</strong>
-                <span class="pull-right label label-primary">
-                    {{ item.price | currency }}
-                </span>
-            </h3>
-            <span class="lead">{{ item.description }}</span>
-        </div>
-    </div>
-</div>
+<!--Data Access Error Report-->
+<ng-include src="'/public/errorReport.html'"></ng-include>
+
+<!--Product Lists-->
+<ng-include src="'/public/productList.html'"></ng-include>
+
+
+
+
 
 <!--set up jQuery-->
 <script src="/components/jquery/dist/jquery.js"></script>
@@ -92,6 +71,8 @@
 <script src="/components/angular/angular.js"></script>
 <script src="/components/angular-ui-utils/ui-utils.js"></script>
 <script src="/controllers/sportsStore.js"></script>
+<script src="/controllers/productListCtrl.js"></script>
+<script src="/filters/customerFilter.js"></script>
 
 <!--set up Flat UI-->
 <script src="/components/Flat-UI-Pro-1.3.2/dist/js/flat-ui-pro.js"></script>
