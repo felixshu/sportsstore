@@ -6,7 +6,7 @@ angular.module("cart", [])
         var cartData = [];
         return {
 
-            addProduc: function (id, name, price) {
+            addProduct: function (id, name, price) {
                 var addedToExistingItem = false;
                 for (var i = 0; i < cartData.length; i++) {
                     if (cartData[i].objectId == id) {

@@ -1,18 +1,54 @@
-<div class="modal">
+<div class="modal" ng-controller="cartSummaryCtrl">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title">Modal header</h4>
+                <h4 class="modal-title">My Shopping Cart</h4>
             </div>
 
             <div class="modal-body">
-                <p>Modal content</p>
-            </div>
+                <!--IF there is no products-->
+                <div class="alert alert-warning" ng-show = "this.cartData.length == 0">
+                    <p> There are no products in your shopping cart</p>
+                </div>
 
+                <!--Show the Checkout List-->
+                <div ng-hide="this.cartData.length == 0">
+                    <table class="table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Item</th>
+                            <th class="text-right">Price</th>
+                            <th class="text-right">Subtotal</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in this.cartData">
+                            <td class="text-center">{{ item.count }}</td>
+                            <td class="text-left">{{ item.name }}</td>
+                            <td class="text-right">{{ item.price | currency }}</td>
+                            <td class="text-right">{{ (item.price*item.count) | currency }}</td>
+                            <td>
+                                <span class="glyphicon-minus text-danger"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td class="text-right" colspan="3">Total:</td>
+                            <td></td>
+                            <td class="text-right">
+                                {{ this.total() | currency }}
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
             <div class="modal-footer">
-                <a href="#/products" class="btn btn-default btn-wide">Keep Shopping</a>
-                <a href="#" class="btn btn-primary btn-wide">Checkout</a>
+                <a href="#/products" class="btn btn-primary btn-wide">Keep Shopping</a>
+                <a href="#/placeorder" class="btn btn-primary btn-wide">Checkout</a>
             </div>
         </div>
     </div>

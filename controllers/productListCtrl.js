@@ -40,6 +40,12 @@ angular.module("sportApp")
         };
 
         $scope.addProductToCart = function(product){
-            cart.addProduc(product.objectId,product.name,product.price);
+            cart.addProduct(product.objectId,product.name,product.price);
         };
+
+        var selectedBrand = null;
+        $scope.selectBrand = function(newBrand){
+            selectedBrand = newBrand;
+            this.selectedPage = 1;
+        }
     }]);

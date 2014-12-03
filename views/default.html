@@ -24,21 +24,18 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#fakelink">Home</a></li>
-                    <li><a href="#fakelink">Products</a></li>
+                    <li><a href="#/products">Products</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Brand <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
                         </ul>
                     </li>
-                    <li><a href="#fakelink">Contact Us</a></li>
+                    <li><a href="#/contactus">Contact Us</a></li>
 
                 </ul>
                 <cart-summary></cart-summary>
-               <!-- <form class="navbar-form navbar-right" action="#" role="search">
+                <form class="navbar-form" action="#" role="search">
                     <div class="form-group">
                         <div class="input-group">
                             <input class="form-control" id="search-query-3" type="text" placeholder="Search">
@@ -47,7 +44,7 @@
                   </span>
                         </div>
                     </div>
-                </form> -->
+                </form>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
@@ -73,6 +70,7 @@
 <script src="/components/angular-ui-utils/ui-utils.js"></script>
 <script src="/controllers/sportsStore.js"></script>
 <script src="/controllers/productListCtrl.js"></script>
+<script src="/controllers/cartSummaryController.js"></script>
 <script src="/ngmodules/cart/cart.js"></script>
 <script src="/filters/customerFilter.js"></script>
 

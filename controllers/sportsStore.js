@@ -3,6 +3,14 @@
  */
 var sportApp = angular.module('sportApp', ['ui.utils', 'CustomerFilter',"cart", "ngRoute"])
 .config(function($routeProvider){
+        $routeProvider.when("/complete",{
+            templateUrl:"/public/thanks.html"
+        });
+
+        $routeProvider.when("/placeorder", {
+            templateUrl:"/public/placeOrder.html"
+        });
+
         $routeProvider.when("/checkout", {
             templateUrl:"/public/checkoutSummary.html"
         });
