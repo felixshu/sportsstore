@@ -1,29 +1,24 @@
 /**
  * Created by FelixGrayson on 2014/12/1.
  */
-var sportApp = angular.module('sportApp', ['ui.utils']);
+var sportApp = angular.module('sportApp', ['ui.utils', 'CustomerFilter']);
 
-sportApp.controller('sportStoreCtrl', ['$scope', '$http', function ($scope, $http) {
-    $http.get('/components/test.json').success(function (data) {
-        $scope.items = data;
-        console.log($scope.items);
+sportApp.constant("dataUrl", "https://api.parse.com/1/classes/Products")
+    .run(function($http){
+        $http.defaults.headers.common["X-Parse-Application-Id"]
+        = "PKqa9sIFXEdYJi08OzVAssQhLxsQjfrm1a7sDGC3";
+        $http.defaults.headers.common["X-Parse-REST-API-Key"]
+        ="qWQBK4zHmeGZp3hDKCUM7WNJq5AN9Ob3aMFutYe0";
     })
-        .error(function (data) {
-            console.log(data);
-        });
+    .controller('sportStoreCtrl', ['$scope', '$http','dataUrl', function ($scope, $http, dataUrl) {
 
-    var selectedCategory = null;
-    $scope.selectCategory = function(newCategory){
-        selectedCategory = newCategory;
-    };
-
-    $scope.categoryFilterFn = function(item){
-        return selectedCategory == null || item.category ==  selectedCategory;
-    };
-
-    $scope.itemNum = function(item){
-        return item.length;
-
-        console.log(item.length);
-    };
-}]);
+        $scope.items = {};
+        $http.get(dataUrl)
+            .success(function (data) {
+            $scope.items.products = data.results;
+            console.log($scope.items.products);
+        })
+            .error(function(response) {
+                $scope.items.error = response.error || response;
+            });
+    }]);

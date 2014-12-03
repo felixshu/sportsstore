@@ -1,0 +1,27 @@
+@media(max-width: 768px){
+  .nav-list>li>a {
+        font-size: 12px;
+    }
+
+    h3{
+        font-size: 15px;
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+
+    h3 span {
+        font-size: 15px;
+    }
+
+    .lead {
+        font-size: 15px;
+    }
+
+    .well {
+        padding: 5px;
+    }
+
+    .badge {
+        font-size: 10px;
+    }
+}
