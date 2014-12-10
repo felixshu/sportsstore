@@ -1,7 +1,10 @@
 /**
- * Created by FelixGrayson on 2014/12/4.
+ * Created by FelixGrayson on 2014/12/5.
  */
-var app = angular.module("sportApp")
-.controller('NavbarCtrl', ['$scope, $filter', function ($scope, $filter) {
-
-}]);
+angular.module("sportApp")
+    .controller('navbarController', ['$scope', function ($scope) {
+        var brand = null;
+        $scope.selectBrand = function(newBrand){
+            brand = newBrand;
+        }
+    }]);

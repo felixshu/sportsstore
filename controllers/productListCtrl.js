@@ -43,9 +43,4 @@ angular.module("sportApp")
             cart.addProduct(product.objectId,product.name,product.price);
         };
 
-        var selectedBrand = null;
-        $scope.selectBrand = function(newBrand){
-            selectedBrand = newBrand;
-            this.selectedPage = 1;
-        }
     }]);

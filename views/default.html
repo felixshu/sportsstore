@@ -11,46 +11,9 @@
     <link rel="stylesheet" type="text/css" href="/components/CSS/Main.css"/>
 </head>
 <body ng-controller="sportStoreCtrl">
-<!--Header Menus-->
-<header>
-    <div class="container">
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-                    <span class="sr-only">Toggle navigation</span>
-                </button>
-                <a class="navbar-brand" href="#">SPORTS Brand</a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-01">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#fakelink">Home</a></li>
-                    <li><a href="#/products">Products</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Brand <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#/contactus">Contact Us</a></li>
 
-                </ul>
-                <cart-summary></cart-summary>
-                <form class="navbar-form" action="#" role="search">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input class="form-control" id="search-query-3" type="text" placeholder="Search">
-                  <span class="input-group-btn">
-                    <button class="btn" type="submit"><span class="fui-search"></span></button>
-                  </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
-        <!-- /navbar -->
-    </div>
-</header>
+<!--Header Menus-->
+<ng-include src="'/public/header.html'"></ng-include>
 
 <!--Data Access Error Report-->
 <ng-include src="'/public/errorReport.html'"></ng-include>
@@ -68,9 +31,12 @@
 <script src="/components/angular/angular.js"></script>
 <script src="/components/angular-route/angular-route.js"></script>
 <script src="/components/angular-ui-utils/ui-utils.js"></script>
+<script src="/components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="/controllers/sportsStore.js"></script>
 <script src="/controllers/productListCtrl.js"></script>
 <script src="/controllers/cartSummaryController.js"></script>
+<script src="/controllers/navbarController.js"></script>
 <script src="/ngmodules/cart/cart.js"></script>
 <script src="/filters/customerFilter.js"></script>
 

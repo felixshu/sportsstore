@@ -1,3 +1,20 @@
+#itemCount {
+    font-size: 90%;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: lightpink;
+}
+
+.ng-valid.ng-dirty {
+    border-color: lightgreen;
+}
+
+span.error {
+    color: red;
+    font-weight: bold;
+}
+
 @media(max-width: 768px){
   .nav-list>li>a {
         font-size: 12px;
@@ -23,5 +40,9 @@
 
     .badge {
         font-size: 10px;
+    }
+
+    #itemCount {
+        font-size: 75%;
     }
 }

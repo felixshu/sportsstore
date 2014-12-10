@@ -1,0 +1,56 @@
+<div class="container" ng-controller="authCtrl">
+    <div class="well">
+        <div class="alert alert-danger" ng-show="authenticationError">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            Authentication Failed ({{ authenticationError }}). Try again.
+        </div>
+
+        <form name="authForm" class="form-horizontal" novalidate>
+            <legend>Sign In</legend>
+
+            <div class="form-group">
+                <label for="inputName" class="col-sm-3 col-md-3 col-lg-3 control-label">User Name:</label>
+                <div class="col-sm-8 col-lg-8 col-md-8">
+                    <input name="username"
+                           ng-model="username"
+                           class="form-control"
+                           id="inputName"
+                           placeholder="User Name"
+                           required>
+                    <span class="error" ng-show="authForm.username.$error.required">
+                        Please Enter Your User Name
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 col-md-3 col-lg-3 control-label">Password:</label>
+
+                <div class="col-sm-8 col-lg-8 col-md-8">
+                    <div class="input-group">
+                        <input class="form-control"
+                               name="password"
+                               type= "{{ inputType }}"
+                               ng-model="password"
+                               placeholder="Password"
+                               required>
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" ng-click="showPassword()"><span
+                                    class="fui-eye"></span></button>
+                        </span>
+                    </div>
+                    <span class="error" ng-show="authForm.password.$error.required">
+                        Please enter your password
+                    </span>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button ng-click="authenticate(username, password)"
+                        ng-disabled="authForm.$invalid"
+                        class="btn btn-primary btn-lg">Log In
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

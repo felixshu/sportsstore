@@ -22,7 +22,7 @@ app.use(logger('dev'));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(cookieparser());
-app.use(express.static(path.join(__dirname + "/views")));
+app.use(express.static(app.get('views')));
 app.use('/public', express.static(path.join(__dirname + "/public")));
 app.use('/components', express.static(path.join(__dirname + "/components")));
 app.use('/controllers', express.static(path.join(__dirname + "/controllers")));
